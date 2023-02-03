@@ -1,0 +1,131 @@
+<div class="single">
+  <div class="img">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div *ngFor="let room of room.images">
+          <div class="carousel-item active " data-bs-interval="1000">
+            <img src={{room}} class="d-block w-100" alt="">
+          </div>
+        </div>
+        <!-- <div class="carousel-item " data-bs-interval="3000" >
+            <img src={{room.images[1]}} class="d-block w-100" alt="">
+          </div>
+          <div class="carousel-item active" data-bs-interval="3000">
+            <img src={{room.images[2]}} class="d-block w-100" alt="">
+          </div> -->
+
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden ">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon " aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+
+  <!-- color: rebeccapurple; -->
+
+
+  <div class="details text-left text-light" style="text-transform:capitalize">
+    <h1 class="text-info" style="font-weight:700;">{{room.name }}</h1>
+    <h2>₹ {{room.price}}/ Night</h2>
+    <h3>{{room.location}}</h3>
+
+
+
+
+    <!-- accordion-->
+
+
+    <br><br>
+
+    <div class="accordion " style=" width:340px;height: 400px;overflow:scroll;" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Details
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body ">
+            <ul style="list-style: none;text-transform: capitalize;">
+              <li class="mb-2"><i class="fa-solid fa-bed"></i> : {{room.beds}} Guest room</li>
+              <li class="mb-2"><i class="fa-solid fa-fan"></i> : {{room.ac}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Locations Nearby
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body w-100">
+            <ul style="list-style: none;">
+              <li class="mb-2"> <i class="fa-solid fa-plane-departure"></i> : {{room.airport}}</li>
+              <li class="mb-2"> <i class="fa-solid fa-train"></i> : {{room.railway}}</li>
+              <li class="mb-2"><i class="fa-solid fa-map-location-dot"></i> : {{room.touristplace}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Services
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ul style="list-style: none;">
+              <li class="mb-2"><i class="fa-solid fa-bath"></i> : {{room.hotwater}}</li>
+              <li class="mb-2"><i class="fa-solid fa-bowl-rice"></i> : {{room.breakfast}}</li>
+              <li class="mb-2"><i class="fa-solid fa-phone-volume"></i> : {{room.service}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <button type="button" class="btn btn-info   w-100 container" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Book Now
+    </button>
+
+
+    <!-- Modal -->
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      
+      <div class="modal-body">
+     <form action="">
+      <label for="in">Check In :</label><br>
+      <input  type="date" name="" id="in" class="form-control" #checkin> <br>
+      <label for="out">Check Out :</label><br>
+      <input  type="date" name="" id="out" class="form-control" #checkout >
+     </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="Book(room.roomid,checkin.value,checkout.value,room.location,room.price,room.name)">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>

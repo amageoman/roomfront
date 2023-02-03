@@ -1,0 +1,28 @@
+
+    <mat-toolbar class="text-dark header" style="padding: 20px;position: sticky;top:0px;z-index: 2;">
+      
+     <a href="" class="sitename" style="text-decoration: none;"> <h3 class="fs-2">Amageoman Rooms</h3></a>
+      <span class="example-spacer"></span>
+      
+     
+     
+
+      <div class="dropdown" >
+        <button   class="btn p-2 position-relative" mat-icon-button type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-regular fa-user"></i>
+        </button>
+
+        <span *ngIf="user" class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+          <span class="visually-hidden">New alerts</span>
+        </span>
+        <ul class="dropdown-menu bg-light text-light">
+          
+          <li><a class="dropdown-item"  (click)="logout()">Logout</a></li>
+          <li><a class="dropdown-item" routerLink="booked" >My rooms</a></li>
+         
+        </ul>
+      </div>
+
+
+    </mat-toolbar>
+  

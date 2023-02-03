@@ -1,0 +1,12 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .header{
+    background-color: whitesmoke;
+    color:#303030;
+  }
+
+  .sitename{
+    color:#303030;
+  }

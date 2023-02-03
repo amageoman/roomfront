@@ -1,0 +1,18 @@
+<div style="height:90vh;width:100%;display: grid;place-items: center;padding: 20px;background-color: transparent;">
+  <form (ngSubmit)="login()"  [formGroup]="loginForm" class="container    p-5  mb-5 text-center" style="max-width: 900px; min-width: 250px;border-radius: 20px;border: 1px solid snow;background:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2));">
+      <div class="form-floating mb-3">
+          <input type="email" class="form-control " id="floatingInput" placeholder="name@example.com" required formControlName="email" >
+          <p  *ngIf = "this.loginForm.get('email')?.errors && this.loginForm.get('email')?.touched" class="text-danger">Invalid email</p>
+          <label for="floatingInput">Email</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required formControlName="psw">
+          <p  *ngIf = "this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched" class="text-danger">Invalid password</p>
+  
+          <label for="floatingPassword">Password</label>
+        </div>
+        <button class="btn btn-success  m-3" >Login</button>
+        <br>
+        <a href="registration" style="text-decoration: none;color:snow;">New user? register here</a>
+  </form>
+</div>

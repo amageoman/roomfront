@@ -1,0 +1,124 @@
+.roomcontainer{
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-basis: 1;
+    gap:20px
+}
+
+
+
+
+
+.room{
+
+    position: relative;
+    min-width:300px;
+    aspect-ratio: 1;
+    /* background-color: bisque; */
+  
+}
+
+
+.booked{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0,0,0,.6);
+    z-index: 2;
+    color: snow;
+    display: grid;
+    place-items: center;
+
+}
+.booked span{
+    
+    border: 10px double black;
+    width:250px;
+    height:250px;
+    border-radius: 50%;
+    background-color: white;
+    text-align: center;
+    
+place-items: center;
+display: grid;
+padding: 20px;
+}
+
+.booked span h1{
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    transform:rotate(-30deg);
+    transform-origin: center;
+    color:red
+}
+   
+
+.room .img{
+
+    position: absolute;
+    width:95%;
+    aspect-ratio: 1;
+    transition-duration: .3s;
+    border-radius:20px ;
+}
+
+.room .img img{
+
+    width:100%;
+    aspect-ratio: 1;
+    border-radius:20px ;
+}
+
+.room .cont{
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 95%;
+    aspect-ratio: 1;
+    z-index: -1;
+    opacity: .7;
+    bottom:0;
+    right:0;
+    background:linear-gradient( to left,rgb(45, 49, 70) 10% ,rgb(11, 9, 18));
+    transition-duration: .3s;
+    border-radius:20px ;
+    color: snow;
+    border:2px solid white;
+    
+}
+
+.room:hover .cont{
+
+    opacity: 1;
+    z-index: 1;
+   
+    transform: translate(-5%,-5%);
+}
+
+.room:hover .img{
+
+    opacity: .7;
+    z-index: -1;
+    transform: translate(5%,5%);
+}
+
+.room .cont button:hover {
+
+    background-color: snow;
+    color: black;
+}
+
+.room .cont button{
+    color: snow;
+}
+
+.room .cont  a{
+    
+    text-decoration: none;
+}
+

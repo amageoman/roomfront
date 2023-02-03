@@ -1,0 +1,66 @@
+<h1 style="margin: auto;padding: 20px;color: snow; text-align: center;">Hi {{user}} , Happy Browsing</h1><br><br><br><br>
+<form (change)="filter(district.value,guest.value)" class="  w-100 bg-transparent text-light  p-2 " style="display: flex;flex-wrap: wrap;justify-content: space-evenly;align-items: center;border-radius: 30px;">
+  <div class="" style="min-width:300px;">
+       <label for="district">Location :</label><br><br>
+        <select class="form-select " aria-label="Default select example" id="district" #district >
+            <option value="" selected>all</option>
+            <option value="1" >Trivandrum</option>
+            <option value="2" >Kollam</option>
+            <option value="3" >Pathanamthitta</option>
+            <option value="4" >Alappuzha</option>
+            <option value="5" >Kottayam</option>
+            <option value="6" >Idukki</option>
+            <option value="7" >Ernakulam</option>
+            <option value="8" >Thrissur</option>
+            <option value="9" >Palakkad</option>
+            <option value="10" >Malappuram</option>
+            <option value="11" >Kozhikode</option>
+            <option value="12" >Wayanad</option>
+            <option value="13" >Kannur</option>
+            <option value="14" >Kasargod</option>
+        </select>
+  </div>
+    
+  <div class="" style="min-width: 300px;">
+        <label for="guest">No of Guest :</label><br><br>
+        <select class="form-select " aria-label="Default select example" id="guest" #guest>
+            <option value="" selected>all</option>
+            <option value="1">Single guest</option>
+            <option value="2">Two guest</option>
+            <option value="3">Three guest</option>
+        </select>
+  </div>
+</form>
+
+<div class="roomcontainer mt-5 p-5" >
+
+    <div class="room" *ngFor="let i of roomsdata">
+        <div class="booked" *ngIf="booked.includes(i.roomid)">
+<span><h1>Not Available</h1></span>
+        </div>
+
+        <div class="img">
+            <img src={{i.images[0]}}
+                alt="">
+        </div>
+        <div class="cont">
+
+            <h3 style="text-transform: capitalize;">{{i.name}}</h3>
+            <h5 style="text-transform: capitalize;">{{i.location}}</h5>
+            <p style="text-transform: capitalize;">₹ {{i.price}} per night</p>
+            <a href="singleroom/{{i.roomid}}"><button class="btn " style="border: 1px solid snow;text-transform: capitalize;" >View More</button></a>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>

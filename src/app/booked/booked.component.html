@@ -1,0 +1,35 @@
+<div *ngIf="user, else elseblock"  style="width:100vw;height:100vh;">
+    <table class="  container mt-5 " style="width:100vw">
+  <thead >
+            <tr class=" text-center text-light bg-primary p-3 m-3 border border-3 W-100 ">
+                <th class="p-3 m-3 border border-3">#</th>
+                <th class="p-3 m-3 border border-3">Hotel</th>
+                <th class="p-3 m-3 border border-3">Location</th>
+                <th class="p-3 m-3 border border-3">Check In</th>
+                <th class="p-3 m-3 border border-3">Check Out</th>
+                <th class="p-3 m-3 border border-3">No of Days</th>
+                <th class="p-3 m-3 border border-3">Total Price</th>
+                <th class="p-3 m-3 border border-3"></th>
+
+            </tr>
+            
+  </thead >
+  <tbody *ngFor="let room of roomdetails, let i = index" >
+    <tr class=" text-center text-light bg-secondary p-3 m-3 border border-3 W-100 ">
+<td class="p-3 m-3 border border-3">{{i+1}}</td>
+<td class="p-3 m-3 border border-3">{{room.name}}</td>
+<td class="p-3 m-3 border border-3">{{room.location}}</td>
+<td class="p-3 m-3 border border-3">{{room.checkin}}</td>
+<td class="p-3 m-3 border border-3">{{room.checkout}}</td>
+<td class="p-3 m-3 border border-3">{{room.days}}</td>
+<td class="p-3 m-3 border border-3">{{room.totalprice}}</td>
+<td class="p-3 m-3 border border-3"><button class="btn btn-light text-danger" (click)="delete(i)">Cancel <i class="fa-regular fa-trash-can"></i></button></td>
+
+    </tr>
+  </tbody>
+    </table>
+</div>
+
+<ng-template #elseblock >
+    <div style="width:100vw;height:90vh;display: grid;place-items: center;color:snow;" ><h1 >Login First</h1></div>
+</ng-template>
